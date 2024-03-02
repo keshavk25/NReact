@@ -1,3 +1,5 @@
+import React from "react";
+import  ReactDOM  from "react-dom/client";
 const heading=
 React.createElement("div",
 {Id:"parent"},
@@ -7,7 +9,7 @@ React.createElement("div",
     {},
     "Hello world!")])])
 
-
+ 
 
 
 
