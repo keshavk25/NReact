@@ -1,24 +1,4 @@
-import React from "react";
-import  ReactDOM  from "react-dom/client";
-
-const Header=()=>{
-    return (
-        
-        <div id="head">
-            <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUTBwAo1vxN_WnGjcqSnwO0noapn4KPZzwuw&usqp=CAU" alt="img" height="50px" width="200px"/>
-            <div className="nav">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const restaurants=[
+export const restaurants=[
     {
     "info": {
     "id": "254126",
@@ -1391,56 +1371,4 @@ const restaurants=[
     "type": "WEBLINK"
     }
     }
-    ];  
-
-const RestroCard=(props)=>{
-    const {restCard}=props;
-    const {cloudinaryImageId,name,avgRating,costForTwo,sla,cuisines}=restCard.info;
-    return(
-    <div id="card">
-        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="dish" />
-        <h4 className="info" id="restname">{name}</h4>
-        <div id="ratdil">
-        <h4 className="info" id="rating">{avgRating} &#9733;</h4>
-        <h4 className="info" id="dilTime">{sla.deliveryTime}mins</h4>
-        </div>
-        <h4 className="info" id="forTwo">{costForTwo}</h4>
-        <h3 className="info" id="cuisines">{cuisines.join(", ")}</h3>
-    </div>)
-}
-
-const AppBody=()=>{
-    return(
-    <>
-    <div id="search">
-        <input type="text" placeholder="search for food and restaurent"></input>
-        <button>search</button>
-    </div>
-    <div id="cardcon">
-    <div id="cardConatiner">
-    {
-        restaurants.map((carditem)=> (
-        <RestroCard key={carditem.info.id} restCard={carditem}/>
-        ))
-    }
-
-    </div>
-    </div>
-    </>)
-}
-
-
-
-const FoodApp=()=>(
-    <>
-    <Header/>
-    <AppBody/>
-    </>
-)
-
-
-const root =ReactDOM.createRoot(document.getElementById("div1"));
-root.render(<FoodApp/>);
-
-
-
+    ]; 
