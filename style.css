@@ -4,10 +4,11 @@
     }
 
 #head{
-    height: 50px;
-    background-color: #5F4C4C;
+    height: 100px;
+    background-color: #ad8064;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: white;
 }
 .logo{
@@ -21,8 +22,24 @@
     margin:10px 25px;
     font-size: 20;
 }
+.nav>ul>button{
+    list-style: none;
+    margin:10px 25px;
+    font-size: 20;
+}
 #search{
     margin: 10px;
+}
+#cardcon{
+    display: flex;
+    justify-content: center;
+}
+#cardConatiner{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    justify-content: space-around;
 }
 #card{
     /* height: 300px; */
@@ -36,6 +53,24 @@
     border: 2px solid transparent;
 
 }
+#shicardcont{
+    display: flex;
+    justify-content: center;
+}
+#shicardContainer{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    justify-content: space-around;
+}
+#shicardContainer>div{
+    height: 300px;
+    width: 275px;
+    margin:20px 5px;
+    border-radius: 25px;
+    background: #f0f0f0;
+}
 #card>img{
     height: 175px;
     width: 100%;
@@ -45,25 +80,15 @@
 .info{
     margin: 3px 20px;
 }
-#cardcon{
-    display: flex;
-    justify-content: center;
-}
-#cardConatiner{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    /* border: 1px solid black; */
-    justify-content: space-around;
-}
-#search{
+
+.search{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     
 }
-#search>input{
+.search>input{
     height: 50px;
     width: 600px;
     box-sizing: border-box;
@@ -71,12 +96,23 @@
     font-size: 17px;
     padding-left:20px ;
 }
-#search>button{
+.search>button{
     height: 50px;
     width: 100px;
     box-sizing: border-box;
     border-radius: 0 7px 7px 0;
     font-size: 17px;
+}
+
+.shisearch{
+    height: 50px;
+    width: 600px;
+    box-sizing: border-box;
+    border-radius: 7px 0 0 7px;
+    font-size: 17px;
+    padding-left:20px ;
+    margin: 20px 25%;
+    background: #f0f0f0;
 }
 #restname{
     opacity: 0.9;

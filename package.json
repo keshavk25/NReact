@@ -2,10 +2,9 @@
   "name": "react",
   "version": "1.0.0",
   "description": "learning react",
-
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -22,10 +21,11 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "browserslist":
-    ["last 2 chrome version"]
-  
+  "browserslist": [
+    "last 2 chrome version"
+  ]
 }
