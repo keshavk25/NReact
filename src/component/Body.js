@@ -6,12 +6,11 @@ import { swiggyApi } from "../utils/constant";
 export const Body = () => {
   const [restaurant, setrestaurant] = useState([]);
   const [updateRest, setupdateRest] = useState([]);
-
   const [searchValue, setsearchValue] = useState("");
 
   useEffect(() => {
     fetchData();
-  }, []);
+  },[]);
 
   const fetchData = async () => {
     const data = await fetch(swiggyApi);

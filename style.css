@@ -22,6 +22,9 @@
     margin:10px 25px;
     font-size: 20;
 }
+.nav>ul>li>Link{
+    text-decoration: none;
+}
 .nav>ul>button{
     list-style: none;
     margin:10px 25px;

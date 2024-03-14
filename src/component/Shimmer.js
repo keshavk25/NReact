@@ -19,7 +19,6 @@ const Shimmer = () => {
             <div className="shicard"></div>
           </div>
         </div>
-        {console.log("shimmer")}
       </div>
     </>
   );
