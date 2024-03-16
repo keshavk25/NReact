@@ -2,11 +2,12 @@ import React from "react";
 import ReactDom from "react-dom/client";
 import Header from "./component/Header";
 import { Body } from "./component/Body";
-import { RouterProvider, createBrowserRouter ,Outlet} from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import About from "./component/About";
 import Contact from "./component/Contact";
 import Error from "./component/Error";
 import Cart from "./component/cart";
+import Restaurent from "./component/Restaurent";
 
 const FoodApp = () => (
   <>
@@ -15,33 +16,35 @@ const FoodApp = () => (
   </>
 );
 
-const routeApp=createBrowserRouter([
+const routeApp = createBrowserRouter([
   {
-    path:"/",
-    element:<FoodApp/>,
-    children:[
+    path: "/",
+    element: <FoodApp />,
+    children: [
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <Body />,
       },
       {
-        path:"about",
-        element:<About/>
+        path: "/about",
+        element: <About />,
       },
       {
-        path:"contact",
-        element:<Contact/>
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path:"cart",
-        element:<Cart/>
-      }
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/restaurent/:restid",
+        element: <Restaurent />,
+      },
     ],
-    errorElement:<Error/> 
+    errorElement: <Error />,
   },
-  
-])
-
+]);
 
 const root = ReactDom.createRoot(document.getElementById("div1"));
-root.render(<RouterProvider router={routeApp}/>);
+root.render(<RouterProvider router={routeApp} />);

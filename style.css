@@ -3,6 +3,8 @@
     padding: 0px;
     }
 
+                                /* HEADER.JS */
+
 #head{
     height: 100px;
     background-color: #ad8064;
@@ -22,68 +24,21 @@
     margin:10px 25px;
     font-size: 20;
 }
-.nav>ul>li>Link{
+.nav>ul>li>a{
     text-decoration: none;
+    color: white;
 }
 .nav>ul>button{
     list-style: none;
     margin:10px 25px;
     font-size: 20;
 }
+
+                           /* BODY.JS */
+
 #search{
     margin: 10px;
 }
-#cardcon{
-    display: flex;
-    justify-content: center;
-}
-#cardConatiner{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    /* border: 1px solid black; */
-    justify-content: space-around;
-}
-#card{
-    /* height: 300px; */
-    width: 275px;
-    margin:20px 5px;
-    border-radius: 25px;
-    /* background: #f0f0f0; */
-}
-#card:hover{
-    cursor: pointer;
-    border: 2px solid transparent;
-
-}
-#shicardcont{
-    display: flex;
-    justify-content: center;
-}
-#shicardContainer{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    /* border: 1px solid black; */
-    justify-content: space-around;
-}
-#shicardContainer>div{
-    height: 300px;
-    width: 275px;
-    margin:20px 5px;
-    border-radius: 25px;
-    background: #f0f0f0;
-}
-#card>img{
-    height: 175px;
-    width: 100%;
-    margin-bottom: 5px;
-    border-radius: 25px;
-}
-.info{
-    margin: 3px 20px;
-}
-
 .search{
     display: flex;
     justify-content: center;
@@ -106,7 +61,58 @@
     border-radius: 0 7px 7px 0;
     font-size: 17px;
 }
+#cardcon{
+    display: flex;
+    justify-content: center;
+}
+#cardConatiner{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#cardConatiner>a{
+    text-decoration: none;
+    color: black;
+}
 
+#card{
+    width: 275px;
+    margin:20px 5px;
+    border-radius: 25px;
+}
+#card:hover{
+    cursor: pointer;
+    border: 2px solid transparent;
+
+}
+#filter{
+    cursor: pointer;   
+   }
+   #filterContainer{
+       display: flex;
+       justify-content: center;
+   }
+   
+                                /* SHIMMER.JS */
+
+#shicardcont{
+    display: flex;
+    justify-content: center;
+}
+#shicardContainer{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#shicardContainer>div{
+    height: 300px;
+    width: 275px;
+    margin:20px 5px;
+    border-radius: 25px;
+    background: #f0f0f0;
+}
 .shisearch{
     height: 50px;
     width: 600px;
@@ -117,6 +123,19 @@
     margin: 20px 25%;
     background: #f0f0f0;
 }
+
+                                /* CARDS.JS */
+
+#card>img{
+    height: 175px;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+.info{
+    margin: 3px 20px;
+}
+
 #restname{
     opacity: 0.9;
     font-size: 20px;
@@ -145,10 +164,4 @@
     opacity: .9;
     font-size: 16px;
 }
-#filter{
- cursor: pointer;   
-}
-#filterContainer{
-    display: flex;
-    justify-content: center;
-}
+

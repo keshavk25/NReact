@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Card } from "./cards";
 import { swiggyApi } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 export const Body = () => {
   const [restaurant, setrestaurant] = useState([]);
@@ -10,18 +11,16 @@ export const Body = () => {
 
   useEffect(() => {
     fetchData();
-  },[]);
+  }, []);
 
   const fetchData = async () => {
     const data = await fetch(swiggyApi);
     const json = await data.json();
-    //    console.log(json);
     const restdata =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setrestaurant(restdata);
     setupdateRest(restdata);
-    //    console.log(restdata);
   };
 
   return restaurant.length == 0 ? (
@@ -36,7 +35,6 @@ export const Body = () => {
             value={searchValue}
             onChange={(e) => {
               setsearchValue(e.target.value);
-              // console.log("change");
             }}
           ></input>
 
@@ -68,7 +66,9 @@ export const Body = () => {
         <div id="cardcon">
           <div id="cardConatiner">
             {updateRest.map((carditem) => (
-              <Card key={carditem.info.id} restCard={carditem} />
+              <Link to={`/restaurent/${carditem.info.id}`} id="bodycard">
+                <Card key={carditem.info.id} restCard={carditem} />
+              </Link>
             ))}
           </div>
         </div>

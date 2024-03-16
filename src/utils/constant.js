@@ -5,3 +5,6 @@ export const cardImg =
 
 export const swiggyApi =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.1671575&lng=75.74005629999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const restdata =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=29.1671575&lng=75.74005629999999&restaurantId=";
