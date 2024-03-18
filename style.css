@@ -87,12 +87,15 @@
 
 }
 #filter{
-    cursor: pointer;   
+    cursor: pointer;  
+    height:30px; 
+    border-radius: 5px;
+    width: 200px;
    }
-   #filterContainer{
-       display: flex;
-       justify-content: center;
-   }
+#filterContainer{
+    display: flex;
+    justify-content: center;
+}
    
                                 /* SHIMMER.JS */
 
@@ -165,3 +168,16 @@
     font-size: 16px;
 }
 
+                            /* RESTAURENT.JS */
+           
+p,h1,h2,h3,ul>li{
+    margin: 10px 0px 10px 50px;
+}                            
+div>ul>li{
+    margin: 5px 0px 5px 80px;
+}                            
+
+                            /* USERCLASS.JS */
+h1,h2,button{
+    margin: 10px 0px 10px 50px;
+}
