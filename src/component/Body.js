@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
 import Shimmer from "./Shimmer";
 import { Card } from "./cards";
 import { swiggyApi } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 export const Body = () => {
+
   const [restaurant, setrestaurant] = useState([]);
   const [updateRest, setupdateRest] = useState([]);
   const [searchValue, setsearchValue] = useState("");
@@ -23,9 +25,13 @@ export const Body = () => {
     setupdateRest(restdata);
   };
 
-  return restaurant.length == 0 ? (
+  if(useOnlineStatus()==false){
+    return <h1>Look Like You Are Offline</h1>
+  }
+
+  return restaurant&&restaurant.length == 0 ? (
     <Shimmer />
-  ) : (
+  ) :(
     <>
       <div id="body">
         <div className="search">
@@ -40,7 +46,7 @@ export const Body = () => {
 
           <button
             onClick={() => {
-              const searchfilter = restaurant.filter((data) =>
+              const searchfilter =restaurant&&restaurant.filter((data) =>
                 data.info.name.toLowerCase().includes(searchValue.toLowerCase())
               );
               setupdateRest(searchfilter);
@@ -54,7 +60,7 @@ export const Body = () => {
           <button
             id="filter"
             onClick={() => {
-              const rest = restaurant.filter((res) => res.info.avgRating > 4);
+              const rest =restaurant&&restaurant.filter((res) => res.info.avgRating > 4);
               setupdateRest(rest);
               console.log(rest);
             }}
@@ -65,7 +71,7 @@ export const Body = () => {
 
         <div id="cardcon">
           <div id="cardConatiner">
-            {updateRest.map((carditem) => (
+            {updateRest&&updateRest.map((carditem) => (
               <Link to={`/restaurent/${carditem.info.id}`} id="bodycard">
                 <Card key={carditem.info.id} restCard={carditem} />
               </Link>
