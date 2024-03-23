@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import Shimmer from "./Shimmer";
-import { Card } from "./cards";
+import  Card  from "./Cards";
 import { swiggyApi } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -33,9 +33,10 @@ export const Body = () => {
     <Shimmer />
   ) :(
     <>
-      <div id="body">
-        <div className="search">
+      <div className="flex justify-center items-center flex-wrap " >
+        <div className="flex justify-center items-center w-full m-4 ">
           <input
+            className="border border-solid border-black rounded-l-lg w-[500px] h-[40px] p-5" 
             type="text"
             placeholder="search for food and restaurent"
             value={searchValue}
@@ -45,6 +46,7 @@ export const Body = () => {
           ></input>
 
           <button
+            className="border border-solid border-black rounded-r-lg w-[100px] h-[40px]"
             onClick={() => {
               const searchfilter =restaurant&&restaurant.filter((data) =>
                 data.info.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -56,9 +58,9 @@ export const Body = () => {
           </button>
         </div>
 
-        <div id="filterContainer">
+        <div className="flex justify-center items-center w-full mb-4 " >
           <button
-            id="filter"
+            className="border border-solid border-black rounded-lg w-64 h-8"
             onClick={() => {
               const rest =restaurant&&restaurant.filter((res) => res.info.avgRating > 4);
               setupdateRest(rest);
@@ -69,11 +71,13 @@ export const Body = () => {
           </button>
         </div>
 
-        <div id="cardcon">
-          <div id="cardConatiner">
+        <div className="">
+          <div className="flex w-[1100px] flex-wrap justify-between">
             {updateRest&&updateRest.map((carditem) => (
-              <Link to={`/restaurent/${carditem.info.id}`} id="bodycard">
+              <Link className="w-[250px] " to={`/restaurent/${carditem.info.id}`} id="bodycard">
+               
                 <Card key={carditem.info.id} restCard={carditem} />
+               
               </Link>
             ))}
           </div>
